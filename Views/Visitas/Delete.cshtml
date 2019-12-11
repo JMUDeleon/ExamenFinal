@@ -1,0 +1,72 @@
+﻿@model FinalExamen.Models.Visita
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Visita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Motivo_Visita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motivo_Visita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Visita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Visita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_Entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_Entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_Salida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_Salida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contacto_Recibio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contacto_Recibio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Apellido)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    }
+</div>

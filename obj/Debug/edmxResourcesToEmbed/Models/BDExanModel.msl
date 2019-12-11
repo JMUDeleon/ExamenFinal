@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EXAMENModelStoreContainer" CdmEntityContainer="EXAMENEntities">
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="EXAMENModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cedula_o_Pasaporte" ColumnName="Cedula_o_Pasaporte" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visita">
+      <EntityTypeMapping TypeName="EXAMENModel.Visita">
+        <MappingFragment StoreEntitySet="Visita">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Motivo_Visita" ColumnName="Motivo_Visita" />
+          <ScalarProperty Name="Fecha_Visita" ColumnName="Fecha_Visita" />
+          <ScalarProperty Name="Hora_Entrada" ColumnName="Hora_Entrada" />
+          <ScalarProperty Name="Hora_Salida" ColumnName="Hora_Salida" />
+          <ScalarProperty Name="Nombre_Completo" ColumnName="Nombre_Completo" />
+          <ScalarProperty Name="Contacto_Recibio" ColumnName="Contacto_Recibio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

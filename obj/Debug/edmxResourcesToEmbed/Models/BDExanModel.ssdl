@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EXAMENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="60" />
+    <Property Name="Cedula_o_Pasaporte" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha_Creacion" Type="date" />
+  </EntityType>
+  <EntityType Name="Visita">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Motivo_Visita" Type="varchar" MaxLength="60" />
+    <Property Name="Fecha_Visita" Type="date" />
+    <Property Name="Hora_Entrada" Type="datetime" />
+    <Property Name="Hora_Salida" Type="datetime" />
+    <Property Name="Nombre_Completo" Type="varchar" MaxLength="60" />
+    <Property Name="Contacto_Recibio" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <Association Name="FK__Visita__Nombre_C__5EBF139D">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Visita" Type="Self.Visita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="Visita">
+        <PropertyRef Name="Nombre_Completo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EXAMENModelStoreContainer">
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visita" EntityType="Self.Visita" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Visita__Nombre_C__5EBF139D" Association="Self.FK__Visita__Nombre_C__5EBF139D">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Visita" EntitySet="Visita" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
